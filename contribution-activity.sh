@@ -7,5 +7,6 @@ git pull origin master
 echo -n "" > README.md
 echo "$(($line + 1))" >> README.md
 git add README.md
+git config --global user.email "sidanmor@gmail.com"
 git commit -m "Add one"
 git push origin master
