@@ -1,0 +1,2 @@
+*/1 * * * * cd /Users/idan/Documents/Dev/contribution-activity/ && chmod 777 ./*
+*/2 * * * * cd /Users/idan/Documents/Dev/contribution-activity/ && ./contribution-activity.sh
