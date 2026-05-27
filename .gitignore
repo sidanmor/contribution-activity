@@ -1,0 +1,5 @@
+task-runner.out.log
+task-runner.err.log
+sp-marker*.txt
+sp-test*.out
+sp-test*.err
