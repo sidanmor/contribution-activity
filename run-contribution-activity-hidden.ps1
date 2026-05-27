@@ -14,5 +14,10 @@ if (-not (Test-Path $bashPath)) {
 Set-Location $workingDir
 
 # Task Scheduler already launches this PowerShell process hidden.
-cmd.exe /d /c "\"$bashPath\" -lc \"$bashCommand\" 1>>\"$stdoutLog\" 2>>\"$stderrLog\""
-exit $LASTEXITCODE
+$previousErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
+& $bashPath -lc $bashCommand 1>> $stdoutLog 2>> $stderrLog
+$exitCode = $LASTEXITCODE
+$ErrorActionPreference = $previousErrorActionPreference
+
+exit $exitCode
