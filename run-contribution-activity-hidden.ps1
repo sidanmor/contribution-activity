@@ -8,11 +8,11 @@ if (-not (Test-Path $bashPath)) {
     throw "Git Bash not found at $bashPath"
 }
 
-$process = Start-Process -FilePath $bashPath \
-    -ArgumentList @('-lc', $bashCommand) \
-    -WorkingDirectory $workingDir \
-    -WindowStyle Hidden \
-    -PassThru \
+$process = Start-Process -FilePath $bashPath `
+    -ArgumentList @('-lc', $bashCommand) `
+    -WorkingDirectory $workingDir `
+    -WindowStyle Hidden `
+    -PassThru `
     -Wait
 
 exit $process.ExitCode
